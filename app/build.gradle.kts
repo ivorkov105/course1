@@ -4,11 +4,7 @@ plugins {
 
 android {
 	namespace = "studying.course1"
-	compileSdk {
-		version = release(36) {
-			minorApiLevel = 1
-		}
-	}
+	compileSdk = 36
 
 	defaultConfig {
 		applicationId = "studying.course1"
@@ -33,6 +29,12 @@ android {
 	buildFeatures {
 		viewBinding = true
 	}
+
+	testOptions {
+		unitTests.all {
+			it.useJUnitPlatform()
+		}
+	}
 }
 
 dependencies {
@@ -42,7 +44,15 @@ dependencies {
 	implementation(libs.androidx.constraintlayout)
 	implementation(libs.androidx.navigation.fragment.ktx)
 	implementation(libs.androidx.navigation.ui.ktx)
+	
 	testImplementation(libs.junit)
+	testImplementation(libs.junit.jupiter.api)
+	testImplementation(libs.junit.jupiter.params)
+	testRuntimeOnly(libs.junit.jupiter.engine)
+	testRuntimeOnly(libs.junit.platform.launcher)
+	
+	testImplementation(libs.mockito.kotlin)
+	
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
 }
