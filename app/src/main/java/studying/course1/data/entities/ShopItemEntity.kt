@@ -1,6 +1,6 @@
-package studying.course1.data.models
+package studying.course1.data.entities
 
-data class ShopItem(
+data class ShopItemEntity(
 	val id: Int?,
 	val name: String?,
 	val description: String?,
