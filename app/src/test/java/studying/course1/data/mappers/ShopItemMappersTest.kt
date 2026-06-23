@@ -1,6 +1,6 @@
 package studying.course1.data.mappers
 
-import junit.framework.TestCase.assertEquals
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import studying.course1.data.entities.ShopItemEntity

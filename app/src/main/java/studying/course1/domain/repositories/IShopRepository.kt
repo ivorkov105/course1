@@ -4,7 +4,7 @@ import studying.course1.domain.models.ShopItemModel
 
 interface IShopRepository {
 	suspend fun addShopItem(shopItemModel: ShopItemModel)
-	suspend fun getShopItem(): ShopItemModel
+	suspend fun getShopItem(id: Int): ShopItemModel
 	suspend fun updateShopItem(shopItemModel: ShopItemModel): ShopItemModel
 	suspend fun deleteShopItem(shopItemModel: ShopItemModel)
 	suspend fun addShopItems(shopItemModels: List<ShopItemModel>)

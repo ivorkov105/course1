@@ -1,5 +1,6 @@
 plugins {
 	alias(libs.plugins.android.application)
+	alias(libs.plugins.ksp)
 }
 
 android {
@@ -44,7 +45,13 @@ dependencies {
 	implementation(libs.androidx.constraintlayout)
 	implementation(libs.androidx.navigation.fragment.ktx)
 	implementation(libs.androidx.navigation.ui.ktx)
-	
+
+	implementation(libs.bundles.room)
+	ksp(libs.room.compiler)
+
+	implementation(libs.hilt.android)
+	ksp(libs.hilt.compiler)
+
 	testImplementation(libs.junit)
 	testImplementation(libs.junit.jupiter.api)
 	testImplementation(libs.junit.jupiter.params)
